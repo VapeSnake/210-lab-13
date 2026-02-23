@@ -7,25 +7,23 @@
 #include <numeric>   // For accumulate
 using namespace std;
 
-
-
 // Features we want to use in this lab:
-//   std::array - A container that encapsulates fixed size arrays. (Check)
-//   size() - A member function of std::array that returns the number of elements in the array. (Check)
-//   File I/O - Reading from and writing to files using fstream. (Check)
-//   Algorithms - Using algorithms like sort from the <algorithm> library. (Check)
-//   Accumulate - Using the accumulate function from the <numeric> library to sum elements in an array. (Check)
-//  .at() - A member function of std::array that provides bounds-checked access to elements. (Check)
-//  .begin() and .end() - Member functions of std::array that return iterators to the beginning and end of the array, respectively. (Check)
-//  rbegin() and rend() - Member functions of std::array that return reverse iterators to the beginning and end of the array, respectively. (Check)
-//  find() - An algorithm from the <algorithm> library that searches for a specific value in a range of elements using an iterator. (Check).
+//   std::vector - A container that dynamically resizes itself as elements are added. (Check)
+//   size() - A member function of std::vector that returns the number of elements in the vector.
+//   vector functions - Using functions like push_back to add elements to the vector.
+//   File I/O - Reading from and writing to files using fstream.
+//   Algorithms - Using algorithms like sort from the <algorithm> library.
+//   Accumulate - Using the accumulate function from the <numeric> library to sum elements in a vector.
+//  .at() - A member function of std::vector that provides bounds-checked access to elements.
+//  .begin() and .end() - Member functions of std::vector that return iterators to the beginning and end of the vector, respectively.
+//  rbegin() and rend() - Member functions of std::vector that return reverse iterators to the beginning and end of the vector, respectively.
+//  find() - An algorithm from the <algorithm> library that searches for a specific value in a range of elements using an iterator. 
 
 int main()
 {
-    array<int, SIZE> randomArray;                                       // Declare an empty array of integers with size 30.
 int main() {
-    array < int, SIZE > randomArray; // Declare an empty array of integers with size 30.
-    cout << "The size of the array is: " << randomArray.size() << endl; // Display the size of the array.
+    vector<int> randomArray; // Declare an empty vector of integers.
+    cout << "The size of the vector is: " << randomArray.size() << endl; // Display the size of the vector.
 
     ifstream inputFile("Random30Elements.txt"); // Open the file containing random numbers.
     if (!inputFile)
