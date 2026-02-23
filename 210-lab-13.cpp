@@ -17,17 +17,15 @@ using namespace std;
 //  .begin() and .end() - Member functions of std::vector that return iterators to the beginning and end of the vector, respectively. (Check)
 //  rbegin() and rend() - Member functions of std::vector that return reverse iterators to the beginning and end of the vector, respectively. (Check)
 //  find() - An algorithm from the <algorithm> library that searches for a specific value in a range of elements using an iterator. (Check)
-//  swap() - A function from the <vector> library that swaps the contents of two vectors.
-//  clear() - A member function of std::vector that removes all elements from the vector, leaving it with a size of 0.
+//  swap() - A function from the <vector> library that swaps the contents of two vectors. (Check)
+//  clear() - A member function of std::vector that removes all elements from the vector, leaving it with a size of 0. (Check)
 
-int main()
-{
-    vector<int> randomVector;                                             // Declare an empty vector of integers.
+int main() {
+    vector < int > randomVector; // Declare an empty vector of integers.
     cout << "The size of the vector is: " << randomVector.size() << endl; // Display the size of the vector.
 
     ifstream inputFile("Random30Elements.txt"); // Open the file containing random numbers.
-    if (!inputFile)
-    {
+    if (!inputFile) {
         cerr << "Error opening file." << endl;
         return -1; // Exits program if file can't be opened.
     }
@@ -40,8 +38,7 @@ int main()
     inputFile.close(); // Closes file after reading.
 
     cout << "Displaying vector elements: \n";
-    for (const int num : randomVector)
-    {
+    for (const int num: randomVector) {
         cout << num << " "; // Display the elements of the vector using a range-based for loop.
     }
     cout << endl;
@@ -52,8 +49,7 @@ int main()
     sort(randomVector.begin(), randomVector.end()); // Sorts the vector in ascending order using the sort algorithm.
 
     cout << "Displaying sorted vector elements: \n";
-    for (const int num : randomVector)
-    {
+    for (const int num: randomVector) {
         cout << num << " "; // Display the sorted elements of the vector.
     }
 
@@ -63,49 +59,46 @@ int main()
     sort(randomVector.rbegin(), randomVector.rend()); // Sorts the vector in descending order using reverse iterators.
 
     cout << "Displaying sorted vector elements: \n";
-    for (const int num : randomVector)
-    {
+    for (const int num: randomVector) {
         cout << num << " "; // Display the sorted elements of the vector.
     }
     cout << endl;
 
     cout << "Calculating the sum of the vector elements... \n";
     int sum = accumulate(randomVector.begin(), randomVector.end(), 0); // Calculates the sum of the vector elements using accumulate.
-    cout << "The sum of the vector elements is: " << sum << endl;      // Display the sum of the vector elements.
+    cout << "The sum of the vector elements is: " << sum << endl; // Display the sum of the vector elements.
 
     cout << "Searching for the number 57 in the vector... \n";
-    vector<int>::iterator it = find(randomVector.begin(), randomVector.end(), 57); // Searches for the number 57 in the vector using find.
-    if (it != randomVector.end())
-    {
+    vector < int > ::iterator it = find(randomVector.begin(), randomVector.end(), 57); // Searches for the number 57 in the vector using find.
+    if (it != randomVector.end()) {
         cout << "Number found at index: " << it - randomVector.begin() << endl; // If found, display the index of the number.
-    }
-    else
-    {
+    } else {
         cout << "Number not found in the vector." << endl; // If not found, displays message indicating so.
     }
 
     cout << "Searching for the number 1 in the vector... \n";
     it = find(randomVector.begin(), randomVector.end(), 1); // Show case where value is not found in the vector.
-    if (it != randomVector.end())
-    {
+    if (it != randomVector.end()) {
         cout << "Number found at index: " << it - randomVector.begin() << endl;
-    }
-    else
-    {
+    } else {
         cout << "Number not found in the vector." << endl;
     }
-    vector<int> differentVector = {2, 4, 6, 8, 10}; // Create a different vector to demonstrate swap.
+    vector < int > differentVector = {
+        2,
+        4,
+        6,
+        8,
+        10
+    }; // Create a different vector to demonstrate swap.
     cout << "Swapping the contents of the two vectors... \n";
     swap(randomVector, differentVector); // Swaps the contents of randomVector and differentVector
     cout << "Displaying contents of randomVector after swap: \n";
-    for (const int num : randomVector)
-    {
+    for (const int num: randomVector) {
         cout << num << " "; // Display the contents of randomVector after the swap.
     }
     cout << endl;
     cout << "Displaying contents of differentVector after swap: \n";
-    for (const int num : differentVector)
-    {
+    for (const int num: differentVector) {
         cout << num << " "; // Display the contents of differentVector after the swap.
     }
     cout << endl;
@@ -113,8 +106,7 @@ int main()
     randomVector.clear(); // Clears all elements from randomVector.
     cout << "The size of randomVector after clearing is: " << randomVector.size() << endl; // Display the size of randomVector after clearing.
     cout << "Displaying contents of randomVector after clearing: \n";
-    for (const int num : randomVector)
-    {
+    for (const int num: randomVector) {
         cout << num << " "; // Attempt to display the contents of randomVector after clearing (should display nothing).
     }
     cout << endl;
