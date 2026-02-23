@@ -94,5 +94,29 @@ int main()
     {
         cout << "Number not found in the vector." << endl;
     }
-
+    vector<int> differentVector = {2, 4, 6, 8, 10}; // Create a different vector to demonstrate swap.
+    cout << "Swapping the contents of the two vectors... \n";
+    swap(randomVector, differentVector); // Swaps the contents of randomVector and differentVector
+    cout << "Displaying contents of randomVector after swap: \n";
+    for (const int num : randomVector)
+    {
+        cout << num << " "; // Display the contents of randomVector after the swap.
+    }
+    cout << endl;
+    cout << "Displaying contents of differentVector after swap: \n";
+    for (const int num : differentVector)
+    {
+        cout << num << " "; // Display the contents of differentVector after the swap.
+    }
+    cout << endl;
+    cout << "Clearing the contents of randomVector... \n";
+    randomVector.clear(); // Clears all elements from randomVector.
+    cout << "The size of randomVector after clearing is: " << randomVector.size() << endl; // Display the size of randomVector after clearing.
+    cout << "Displaying contents of randomVector after clearing: \n";
+    for (const int num : randomVector)
+    {
+        cout << num << " "; // Attempt to display the contents of randomVector after clearing (should display nothing).
+    }
+    cout << endl;
+    return 0;
 }
